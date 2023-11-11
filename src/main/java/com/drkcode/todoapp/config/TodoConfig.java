@@ -16,31 +16,31 @@ public class TodoConfig {
     }
 
     @Bean
-    public CreateTodoService createTodo() {
+    public CreateTodoService create() {
         CreateTodoPersistence createTodoPersistence = new CreateTodoPersistence(todoRepositoryJPA);
         return new CreateTodoService(createTodoPersistence);
     }
 
     @Bean
-    public GetTodosService getTodosService() {
+    public GetTodosService getAll() {
         GetTodosPersistence getTodosPersistence = new GetTodosPersistence(todoRepositoryJPA);
         return new GetTodosService(getTodosPersistence);
     }
 
     @Bean
-    public GetTodoByIdService getTodoByIdService() {
+    public GetTodoByIdService getById() {
         GetTodoByIdPersistence getTodoByIdPersistence = new GetTodoByIdPersistence(todoRepositoryJPA);
         return new GetTodoByIdService(getTodoByIdPersistence);
     }
 
     @Bean
-    public UpdateTodoService updateTodoService() {
+    public UpdateTodoService update() {
         UpdateTodoPersistence updateTodoPersistence = new UpdateTodoPersistence(todoRepositoryJPA);
         return new UpdateTodoService(updateTodoPersistence);
     }
 
     @Bean
-    public DeleteTodoService deleteTodoService() {
+    public DeleteTodoService delete() {
         DeleteTodoPersistence deleteTodoPersistence = new DeleteTodoPersistence(todoRepositoryJPA);
         return new DeleteTodoService(deleteTodoPersistence);
     }

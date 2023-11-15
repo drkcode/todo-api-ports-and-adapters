@@ -1,4 +1,4 @@
-package com.drkcode.todoapp.adapters.driven.persistence.h2adapter;
+package com.drkcode.todoapp.adapters.driven.persistence.h2adapter.repositories;
 
 import com.drkcode.todoapp.adapters.driven.persistence.h2adapter.entities.TodoEntity;
 import org.springframework.data.repository.CrudRepository;

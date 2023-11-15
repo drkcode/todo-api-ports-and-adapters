@@ -1,19 +1,19 @@
-package com.drkcode.todoapp.adapters.driven.persistence.h2adapter.repositories;
+package com.drkcode.todoapp.adapters.driven.persistence.h2adapter.repositories.impl;
 
-import com.drkcode.todoapp.adapters.driven.persistence.h2adapter.TodoRepositoryJPA;
 import com.drkcode.todoapp.adapters.driven.persistence.h2adapter.entities.TodoEntity;
 import com.drkcode.todoapp.adapters.driven.persistence.h2adapter.mappers.TodoMapper;
+import com.drkcode.todoapp.adapters.driven.persistence.h2adapter.repositories.TodoRepositoryJPA;
 import com.drkcode.todoapp.domain.model.Todo;
 import com.drkcode.todoapp.domain.model.TodoId;
 import com.drkcode.todoapp.domain.repositories.GetTodoByIdRepository;
 
 import java.util.Optional;
 
-public class GetTodoByIdPersistence implements GetTodoByIdRepository {
+public class GetTodoByIdRepositoryImpl implements GetTodoByIdRepository {
 
     private final TodoRepositoryJPA todoRepositoryJPA;
 
-    public GetTodoByIdPersistence(TodoRepositoryJPA todoRepositoryJPA) {
+    public GetTodoByIdRepositoryImpl(TodoRepositoryJPA todoRepositoryJPA) {
         this.todoRepositoryJPA = todoRepositoryJPA;
     }
 

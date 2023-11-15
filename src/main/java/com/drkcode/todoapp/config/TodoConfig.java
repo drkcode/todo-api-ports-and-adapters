@@ -1,7 +1,7 @@
 package com.drkcode.todoapp.config;
 
-import com.drkcode.todoapp.adapters.driven.persistence.h2adapter.TodoRepositoryJPA;
-import com.drkcode.todoapp.adapters.driven.persistence.h2adapter.repositories.*;
+import com.drkcode.todoapp.adapters.driven.persistence.h2adapter.repositories.TodoRepositoryJPA;
+import com.drkcode.todoapp.adapters.driven.persistence.h2adapter.repositories.impl.*;
 import com.drkcode.todoapp.domain.services.*;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -17,32 +17,32 @@ public class TodoConfig {
 
     @Bean
     public CreateTodoService create() {
-        CreateTodoPersistence createTodoPersistence = new CreateTodoPersistence(todoRepositoryJPA);
-        return new CreateTodoService(createTodoPersistence);
+        CreateTodoRepositoryImpl createTodoRepository = new CreateTodoRepositoryImpl(todoRepositoryJPA);
+        return new CreateTodoService(createTodoRepository);
     }
 
     @Bean
     public GetTodosService getAll() {
-        GetTodosPersistence getTodosPersistence = new GetTodosPersistence(todoRepositoryJPA);
-        return new GetTodosService(getTodosPersistence);
+        GetTodosRepositoryImpl getTodosRepository = new GetTodosRepositoryImpl(todoRepositoryJPA);
+        return new GetTodosService(getTodosRepository);
     }
 
     @Bean
     public GetTodoByIdService getById() {
-        GetTodoByIdPersistence getTodoByIdPersistence = new GetTodoByIdPersistence(todoRepositoryJPA);
-        return new GetTodoByIdService(getTodoByIdPersistence);
+        GetTodoByIdRepositoryImpl getTodoByIdRepository = new GetTodoByIdRepositoryImpl(todoRepositoryJPA);
+        return new GetTodoByIdService(getTodoByIdRepository);
     }
 
     @Bean
     public UpdateTodoService update() {
-        UpdateTodoPersistence updateTodoPersistence = new UpdateTodoPersistence(todoRepositoryJPA);
-        return new UpdateTodoService(updateTodoPersistence);
+        UpdateTodoRepositoryImpl updateTodoRepository = new UpdateTodoRepositoryImpl(todoRepositoryJPA);
+        return new UpdateTodoService(updateTodoRepository);
     }
 
     @Bean
     public DeleteTodoService delete() {
-        DeleteTodoPersistence deleteTodoPersistence = new DeleteTodoPersistence(todoRepositoryJPA);
-        return new DeleteTodoService(deleteTodoPersistence);
+        DeleteTodoRepositoryImpl deleteTodoRepository = new DeleteTodoRepositoryImpl(todoRepositoryJPA);
+        return new DeleteTodoService(deleteTodoRepository);
     }
 
 }
